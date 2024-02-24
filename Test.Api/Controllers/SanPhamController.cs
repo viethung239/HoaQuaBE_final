@@ -7,7 +7,8 @@ using Test.Application.Services;
 
 namespace Test.Api.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,NVSanPham,NVKho,NVNhanSu")]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class SanPhamController : ControllerBase
