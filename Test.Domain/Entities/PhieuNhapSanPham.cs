@@ -15,9 +15,8 @@ namespace Test.Domain.Entities
         public float? GiaNhap { get; set; }
         public float? SoLuong { get; set; }
         public float? TongTien { get; set; }
-        public Guid? IdChiNhanh { get; set; }
-        public Guid? IdDMNSanPham { get; set; }
-        public Guid? IdKho { get; set; }
+       
+        public Guid? IdKhoChiTiet { get; set; }
 
         public float? SoLuongTruoc { get; set; }
         public float? SoLuongSau { get; set; }
@@ -30,11 +29,9 @@ namespace Test.Domain.Entities
         public PhieuNhap PhieuNhap { get; set; }
         [ForeignKey("IdSanPham")]
         public SanPham SanPham { get; set; }
-        [ForeignKey("IdChiNhanh")]
-        public ChiNhanh ChiNhanh { get; set; }
-        [ForeignKey("IdDMNSanPham")]
-        public DMNhomSanPham DMNhomSanPham { get; set; }
-        [ForeignKey("IdKho")]
-        public Kho Kho { get; set; }
+      
+      
+        [ForeignKey("IdKhoChiTiet")]
+        public KhoChiTiet KhoChiTiet { get; set; }
     }
 }

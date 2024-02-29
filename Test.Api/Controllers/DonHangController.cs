@@ -38,7 +38,7 @@ namespace Test.Api.Controllers
         [HttpPost]
         public IActionResult AddDH(DonHangDto donhangDto)
         {
-            donhangDto.IdDonHang = Guid.NewGuid();
+           // donhangDto.IdDonHang = Guid.NewGuid();
             if (_donhangService.Add(donhangDto) == false)
             {
 

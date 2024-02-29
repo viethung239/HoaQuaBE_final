@@ -11,9 +11,11 @@ namespace Test.Application.Dto
         public Guid IdDonHangSanPham { get; set; }
         public Guid IdDonHang { get; set; }
         public Guid IdSanPham { get; set; }
-        public float DonGia { get; set; }
-        public float ThanhTien { get; set; }
-        public Guid IdChiNhanh { get; set; }
+        public int? SoLuong { get; set; }
+
+        public float? Gia { get; set; }
+        public float? TongTien { get; set; }
+
         public DateTime NgayTao { get; set; }
         public DateTime NgayCapNhat { get; set; }
     }

@@ -277,24 +277,29 @@ namespace Test.Infrastructure.Context
                 e.Property(e => e.NgayCapNhat);
             });
             modelBuilder.Entity<DonHang>(e => {
-                e.ToTable("DonHang");//đặt tên bảng
-                e.HasKey(e => e.IdDonHang);//cài khóa chính
+                e.ToTable("DonHang");
+                e.HasKey(e => e.IdDonHang);
 
                 e.Property(e => e.IdDonHang)
-                .IsRequired();          //trường này ko được rỗng
+                .IsRequired();          
 
+                e.Property(e => e.MaDonHang)
+               .HasMaxLength(50).HasColumnType("nvarchar");
+                e.Property(e => e.KieuThanhToan);
 
                 e.Property(e => e.ThanhTien);
 
-                e.Property(e => e.NgayThanhToan);
+               
 
                 e.Property(e => e.TenKhach)
                 .HasMaxLength(50).HasColumnType("nvarchar");
 
                 e.Property(e => e.SoDienThoaiKhach)
                 .HasMaxLength(12).HasColumnType("nvarchar");
+                e.Property(e => e.DiaChi)
+                .HasMaxLength(250).HasColumnType("nvarchar");
 
-              
+
                 e.Property(e => e.GhiChuDonHang)
                 .HasMaxLength(500).HasColumnType("nvarchar");
           
@@ -309,8 +314,9 @@ namespace Test.Infrastructure.Context
                 e.HasKey(e => e.IdDonHangSanPham);//cài khóa chính
                 e.Property(e => e.IdDonHangSanPham)
                 .IsRequired();          //trường này ko được rỗng
-                e.Property(e => e.DonGia);          
-                e.Property(e => e.ThanhTien);          
+                e.Property(e => e.SoLuong);
+                e.Property(e => e.Gia);
+                e.Property(e => e.TongTien);
                 e.Property(e => e.NgayTao);
                 e.Property(e => e.NgayCapNhat);
             });
@@ -386,7 +392,7 @@ namespace Test.Infrastructure.Context
                 e.Property(e => e.Gia);
 
 
-                e.Property(e => e.GiaNhap);
+                e.Property(e => e.TongTien);
 
 
 

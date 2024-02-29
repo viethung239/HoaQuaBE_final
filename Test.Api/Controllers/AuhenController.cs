@@ -91,7 +91,7 @@ namespace Test.Api.Controllers
             if (user != null)
             {
                 var tenNV = user.TenNV;
-              
+                var userId = user.UserId;
 
                 var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             
@@ -103,6 +103,7 @@ namespace Test.Api.Controllers
                  new(ClaimTypes.NameIdentifier, userDto.UserName),
                  new(ClaimTypes.Role, role?.TenQuyen ?? "DefaultRole"),
                  new(ClaimTypes.Name, user.TenNV??"bị null"),
+                 new(ClaimTypes.UserData, userId.ToString()),
                 };
 
                 var token = new JwtSecurityToken
