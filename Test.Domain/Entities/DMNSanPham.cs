@@ -23,7 +23,6 @@ namespace Test.Domain.Entities
       
     
         public ICollection<DMSanPham> DMSanPhams { get; set; }
-        public ICollection<PhieuNhapSanPham> PhieuNhapSanPhams { get; set; }
-        public ICollection<PhieuXuatSanPham> PhieuXuatSanPhams { get; set; }
+       
     }
 }

@@ -13,7 +13,7 @@ namespace Test.Application.Dto
         public Guid? IdDMSanPham { get; set; }
         public string? TenSanPham { get; set; }
         public float? GiaSanPham { get; set; }
-        public float? GiaNhapVao { get; set; }
+   
         public string? Mota { get; set; }
         public string? IdImage { get; set; }
         public bool? SuDung { get; set; }

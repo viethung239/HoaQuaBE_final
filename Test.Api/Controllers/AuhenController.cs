@@ -92,8 +92,9 @@ namespace Test.Api.Controllers
             {
                 var tenNV = user.TenNV;
                 var userId = user.UserId;
+                var avartarUrl = user.AvartarUrl;
 
-                var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+               var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             
                 var signingCredential = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
                 
@@ -104,6 +105,7 @@ namespace Test.Api.Controllers
                  new(ClaimTypes.Role, role?.TenQuyen ?? "DefaultRole"),
                  new(ClaimTypes.Name, user.TenNV??"bị null"),
                  new(ClaimTypes.UserData, userId.ToString()),
+                 new(ClaimTypes.Email, avartarUrl?? "bị null"),
                 };
 
                 var token = new JwtSecurityToken

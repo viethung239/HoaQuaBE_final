@@ -28,12 +28,7 @@ namespace Test.Application.Mapping
             CreateMap<NhaCungCap, NhaCungCapDto>().ReverseMap();
             CreateMap<DonHang, DonHangDto>().ReverseMap();
             CreateMap<DonHangChiTiet, DonHangChiTietDto>().ReverseMap();
-            CreateMap<PhieuNhap, PhieuNhapDto>().ReverseMap();
-            CreateMap<PhieuXuat, PhieuXuatDto>().ReverseMap();
-            CreateMap<PhieuNhapSanPham, PhieuNhapSanPhamDto>().ReverseMap();
-            CreateMap<PhieuXuatSanPham, PhieuXuatSanPhamDto>().ReverseMap();
-            CreateMap<PhieuChuyenKho, PhieuChuyenKhoDto>().ReverseMap();
-            CreateMap<PhieuChuyenKhoSanPham, PhieuChuyenKhoSanPhamDto>().ReverseMap();
+           
         }
     }
 }

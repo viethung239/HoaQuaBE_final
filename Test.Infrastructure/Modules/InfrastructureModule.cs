@@ -28,12 +28,7 @@ namespace Test.Infrastructure.Modules
             services.AddScoped<IChiNhanhRepo, ChiNhanhRepo>();
             services.AddScoped<IDonHangRepo, DonHangRepo>();
             services.AddScoped<IDonHangChiTietRepo, DonHangChiTietRepo>();
-            services.AddScoped<IPhieuXuatRepo, PhieuXuatRepo>();
-            services.AddScoped<IPhieuNhapRepo, PhieuNhapRepo>();
-            services.AddScoped<IPhieuNhapSanPhamRepo, PhieuNhapSanPhamRepo>();
-            services.AddScoped<IPhieuXuatSanPhamRepo, PhieuXuatSanPhamRepo>();
-            services.AddScoped<IPhieuChuyenKhoRepo, PhieuChuyenKhoRepo>();
-            services.AddScoped<IPhieuChuyenKhoSanPham, PhieuChuyenKhoSanPhamRepo>();
+          
             return services;
         }
     }

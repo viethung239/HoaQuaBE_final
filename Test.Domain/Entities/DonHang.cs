@@ -30,6 +30,6 @@ namespace Test.Domain.Entities
 
         //
         public ICollection<DonHangChiTiet> DonHangChiTiets { get; set; }
-        public ICollection<PhieuXuat> PhieuXuats { get; set; }
+    
     }
 }

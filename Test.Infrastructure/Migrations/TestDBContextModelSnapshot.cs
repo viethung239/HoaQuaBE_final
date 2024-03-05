@@ -328,296 +328,6 @@ namespace Test.Infrastructure.Migrations
                     b.ToTable("NhaCungCap", (string)null);
                 });
 
-            modelBuilder.Entity("Test.Domain.Entities.PhieuChuyenKho", b =>
-                {
-                    b.Property<Guid>("IdPhieuChuyenKho")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("GhiChu")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar");
-
-                    b.Property<Guid?>("IdDenChiNhanh")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdDenKho")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdTuChiNhanh")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdTuKho")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("NgayCapNhat")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayChuyenKho")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayTao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<float?>("TongGiaTri")
-                        .HasColumnType("real");
-
-                    b.HasKey("IdPhieuChuyenKho");
-
-                    b.ToTable("PhieuChuyenKho", (string)null);
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuChuyenKhoSanPham", b =>
-                {
-                    b.Property<Guid>("IdPhieuChuyenKhoSanPham")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<float?>("Gia")
-                        .HasColumnType("real");
-
-                    b.Property<Guid?>("IdDenChiNhanh")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdDenKho")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdPhieuChuyenKho")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdSanPham")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdTuChiNhanh")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdTuKho")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("NgayCapNhat")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayTao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<float?>("SoLuong")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("SoLuongSauDenKho")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("SoLuongSauTuKho")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("SoLuongTruocDenKho")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("SoLuongTruocTuKho")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("TongTien")
-                        .HasColumnType("real");
-
-                    b.HasKey("IdPhieuChuyenKhoSanPham");
-
-                    b.HasIndex("IdPhieuChuyenKho");
-
-                    b.HasIndex("IdSanPham");
-
-                    b.ToTable("PhieuChuyenKhoSanPham", (string)null);
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuNhap", b =>
-                {
-                    b.Property<Guid>("IdPhieuNhap")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("GhiChu")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar");
-
-                    b.Property<Guid?>("IdChiNhanh")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdKho")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdNhaCungCap")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("NgayCapNhat")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayNhap")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayTao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<float?>("TongGiaNhap")
-                        .HasColumnType("real");
-
-                    b.HasKey("IdPhieuNhap");
-
-                    b.HasIndex("IdChiNhanh");
-
-                    b.HasIndex("IdKho");
-
-                    b.HasIndex("IdNhaCungCap");
-
-                    b.ToTable("PhieuNhap", (string)null);
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuNhapSanPham", b =>
-                {
-                    b.Property<Guid>("IdPhieuNhapSanPham")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("DMNhomSanPhamIdDMNSanPham")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<float?>("GiaNhap")
-                        .HasColumnType("real");
-
-                    b.Property<Guid?>("IdKhoChiTiet")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdPhieuNhap")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdSanPham")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("NgayCapNhat")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayTao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<float?>("SoLuong")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("SoLuongSau")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("SoLuongTruoc")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("TongTien")
-                        .HasColumnType("real");
-
-                    b.HasKey("IdPhieuNhapSanPham");
-
-                    b.HasIndex("DMNhomSanPhamIdDMNSanPham");
-
-                    b.HasIndex("IdKhoChiTiet");
-
-                    b.HasIndex("IdPhieuNhap");
-
-                    b.HasIndex("IdSanPham");
-
-                    b.ToTable("PhieuNhapSanPham", (string)null);
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuXuat", b =>
-                {
-                    b.Property<Guid>("IdPhieuXuat")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("GhiChu")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar");
-
-                    b.Property<Guid?>("IdChiNhanh")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdDonHang")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdKho")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("NgayCapNhat")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayTao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayXuat")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("UserId")
-                        .IsRequired()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("IdPhieuXuat");
-
-                    b.HasIndex("IdChiNhanh");
-
-                    b.HasIndex("IdDonHang");
-
-                    b.HasIndex("IdKho");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("PhieuXuat", (string)null);
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuXuatSanPham", b =>
-                {
-                    b.Property<Guid>("IdPhieuXuatSanPham")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("DMNhomSanPhamIdDMNSanPham")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<float?>("Gia")
-                        .HasColumnType("real");
-
-                    b.Property<Guid?>("IdKhoChiTiet")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdPhieuXuat")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdSanPham")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("NgayCapNhat")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("NgayTao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<float?>("SoLuong")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("SoLuongSau")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("SoLuongTruoc")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("TongTien")
-                        .HasColumnType("real");
-
-                    b.HasKey("IdPhieuXuatSanPham");
-
-                    b.HasIndex("DMNhomSanPhamIdDMNSanPham");
-
-                    b.HasIndex("IdKhoChiTiet");
-
-                    b.HasIndex("IdPhieuXuat");
-
-                    b.HasIndex("IdSanPham");
-
-                    b.ToTable("PhieuXuatSanPham", (string)null);
-                });
-
             modelBuilder.Entity("Test.Domain.Entities.Role", b =>
                 {
                     b.Property<Guid>("RoleId")
@@ -648,9 +358,6 @@ namespace Test.Infrastructure.Migrations
                     b.Property<Guid>("IdSanPham")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<float?>("GiaNhapVao")
-                        .HasColumnType("real");
 
                     b.Property<float?>("GiaSanPham")
                         .HasColumnType("real");
@@ -840,121 +547,6 @@ namespace Test.Infrastructure.Migrations
                     b.Navigation("SanPham");
                 });
 
-            modelBuilder.Entity("Test.Domain.Entities.PhieuChuyenKhoSanPham", b =>
-                {
-                    b.HasOne("Test.Domain.Entities.PhieuChuyenKho", "PhieuChuyenKho")
-                        .WithMany("PhieuChuyenKhoSanPhams")
-                        .HasForeignKey("IdPhieuChuyenKho");
-
-                    b.HasOne("Test.Domain.Entities.SanPham", "SanPham")
-                        .WithMany("PhieuChuyenKhoSanPhams")
-                        .HasForeignKey("IdSanPham");
-
-                    b.Navigation("PhieuChuyenKho");
-
-                    b.Navigation("SanPham");
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuNhap", b =>
-                {
-                    b.HasOne("Test.Domain.Entities.ChiNhanh", "ChiNhanh")
-                        .WithMany("PhieuNhaps")
-                        .HasForeignKey("IdChiNhanh");
-
-                    b.HasOne("Test.Domain.Entities.Kho", "Kho")
-                        .WithMany("PhieuNhaps")
-                        .HasForeignKey("IdKho");
-
-                    b.HasOne("Test.Domain.Entities.NhaCungCap", "NhaCungCap")
-                        .WithMany("PhieuNhaps")
-                        .HasForeignKey("IdNhaCungCap");
-
-                    b.Navigation("ChiNhanh");
-
-                    b.Navigation("Kho");
-
-                    b.Navigation("NhaCungCap");
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuNhapSanPham", b =>
-                {
-                    b.HasOne("Test.Domain.Entities.DMNhomSanPham", null)
-                        .WithMany("PhieuNhapSanPhams")
-                        .HasForeignKey("DMNhomSanPhamIdDMNSanPham");
-
-                    b.HasOne("Test.Domain.Entities.KhoChiTiet", "KhoChiTiet")
-                        .WithMany("PhieuNhapSanPhams")
-                        .HasForeignKey("IdKhoChiTiet");
-
-                    b.HasOne("Test.Domain.Entities.PhieuNhap", "PhieuNhap")
-                        .WithMany("PhieuNhapSanPhams")
-                        .HasForeignKey("IdPhieuNhap");
-
-                    b.HasOne("Test.Domain.Entities.SanPham", "SanPham")
-                        .WithMany("PhieuNhapSanPhams")
-                        .HasForeignKey("IdSanPham");
-
-                    b.Navigation("KhoChiTiet");
-
-                    b.Navigation("PhieuNhap");
-
-                    b.Navigation("SanPham");
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuXuat", b =>
-                {
-                    b.HasOne("Test.Domain.Entities.ChiNhanh", "ChiNhanh")
-                        .WithMany("PhieuXuats")
-                        .HasForeignKey("IdChiNhanh");
-
-                    b.HasOne("Test.Domain.Entities.DonHang", "DonHang")
-                        .WithMany("PhieuXuats")
-                        .HasForeignKey("IdDonHang");
-
-                    b.HasOne("Test.Domain.Entities.Kho", "Kho")
-                        .WithMany("PhieuXuats")
-                        .HasForeignKey("IdKho");
-
-                    b.HasOne("Test.Domain.Entities.User", "User")
-                        .WithMany("PhieuXuats")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ChiNhanh");
-
-                    b.Navigation("DonHang");
-
-                    b.Navigation("Kho");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuXuatSanPham", b =>
-                {
-                    b.HasOne("Test.Domain.Entities.DMNhomSanPham", null)
-                        .WithMany("PhieuXuatSanPhams")
-                        .HasForeignKey("DMNhomSanPhamIdDMNSanPham");
-
-                    b.HasOne("Test.Domain.Entities.KhoChiTiet", "KhoChiTiet")
-                        .WithMany("PhieuXuatSanPhams")
-                        .HasForeignKey("IdKhoChiTiet");
-
-                    b.HasOne("Test.Domain.Entities.PhieuXuat", "PhieuXuat")
-                        .WithMany("PhieuXuatSanPhams")
-                        .HasForeignKey("IdPhieuXuat");
-
-                    b.HasOne("Test.Domain.Entities.SanPham", "SanPham")
-                        .WithMany("PhieuXuatSanPhams")
-                        .HasForeignKey("IdSanPham");
-
-                    b.Navigation("KhoChiTiet");
-
-                    b.Navigation("PhieuXuat");
-
-                    b.Navigation("SanPham");
-                });
-
             modelBuilder.Entity("Test.Domain.Entities.SanPham", b =>
                 {
                     b.HasOne("Test.Domain.Entities.DMSanPham", "DMSanPham")
@@ -985,10 +577,6 @@ namespace Test.Infrastructure.Migrations
                 {
                     b.Navigation("KhoChiTiets");
 
-                    b.Navigation("PhieuNhaps");
-
-                    b.Navigation("PhieuXuats");
-
                     b.Navigation("Users");
 
                     b.Navigation("khos");
@@ -1002,10 +590,6 @@ namespace Test.Infrastructure.Migrations
             modelBuilder.Entity("Test.Domain.Entities.DMNhomSanPham", b =>
                 {
                     b.Navigation("DMSanPhams");
-
-                    b.Navigation("PhieuNhapSanPhams");
-
-                    b.Navigation("PhieuXuatSanPhams");
                 });
 
             modelBuilder.Entity("Test.Domain.Entities.DMSanPham", b =>
@@ -1016,46 +600,16 @@ namespace Test.Infrastructure.Migrations
             modelBuilder.Entity("Test.Domain.Entities.DonHang", b =>
                 {
                     b.Navigation("DonHangChiTiets");
-
-                    b.Navigation("PhieuXuats");
                 });
 
             modelBuilder.Entity("Test.Domain.Entities.Kho", b =>
                 {
                     b.Navigation("KhoChiTiets");
-
-                    b.Navigation("PhieuNhaps");
-
-                    b.Navigation("PhieuXuats");
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.KhoChiTiet", b =>
-                {
-                    b.Navigation("PhieuNhapSanPhams");
-
-                    b.Navigation("PhieuXuatSanPhams");
                 });
 
             modelBuilder.Entity("Test.Domain.Entities.NhaCungCap", b =>
                 {
                     b.Navigation("KhoChiTiets");
-
-                    b.Navigation("PhieuNhaps");
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuChuyenKho", b =>
-                {
-                    b.Navigation("PhieuChuyenKhoSanPhams");
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuNhap", b =>
-                {
-                    b.Navigation("PhieuNhapSanPhams");
-                });
-
-            modelBuilder.Entity("Test.Domain.Entities.PhieuXuat", b =>
-                {
-                    b.Navigation("PhieuXuatSanPhams");
                 });
 
             modelBuilder.Entity("Test.Domain.Entities.Role", b =>
@@ -1068,19 +622,11 @@ namespace Test.Infrastructure.Migrations
                     b.Navigation("DonHangChiTiets");
 
                     b.Navigation("KhoChiTiets");
-
-                    b.Navigation("PhieuChuyenKhoSanPhams");
-
-                    b.Navigation("PhieuNhapSanPhams");
-
-                    b.Navigation("PhieuXuatSanPhams");
                 });
 
             modelBuilder.Entity("Test.Domain.Entities.User", b =>
                 {
                     b.Navigation("DonHangs");
-
-                    b.Navigation("PhieuXuats");
                 });
 #pragma warning restore 612, 618
         }

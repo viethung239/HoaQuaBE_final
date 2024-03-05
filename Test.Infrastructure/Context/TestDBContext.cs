@@ -33,13 +33,7 @@ namespace Test.Infrastructure.Context
         public virtual DbSet<DonHang>  DonHangs {get ; set;}
         public virtual DbSet<DonHangChiTiet> DonHangChiTiets { get; set; }
 
-        public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
-
-        public virtual DbSet<PhieuXuat> PhieuXuats { get; set; }
-        public virtual DbSet<PhieuNhapSanPham> PhieuNhapSanPhams { get; set; }
-        public virtual DbSet<PhieuXuatSanPham> PhieuXuatSanPhams { get; set; }
-        public virtual DbSet<PhieuChuyenKho> PhieuChuyenKhos { get; set; }
-        public virtual DbSet<PhieuChuyenKhoSanPham> PhieuChuyenKhoSanPhams { get; set; }
+     
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -125,7 +119,7 @@ namespace Test.Infrastructure.Context
                 e.Property(e => e.TenSanPham)
                 .HasMaxLength(100).HasColumnType("nvarchar");
                 e.Property(e => e.GiaSanPham);
-                e.Property(e => e.GiaNhapVao);
+              
                 e.Property(e => e.Mota)
                 .HasMaxLength(500).HasColumnType("nvarchar");
                 e.Property(e => e.IdImage)
@@ -320,151 +314,7 @@ namespace Test.Infrastructure.Context
                 e.Property(e => e.NgayTao);
                 e.Property(e => e.NgayCapNhat);
             });
-            modelBuilder.Entity<PhieuNhap>(e => {
-                e.ToTable("PhieuNhap");//đặt tên bảng
-                e.HasKey(e => e.IdPhieuNhap);//cài khóa chính
-
-                e.Property(e => e.IdPhieuNhap)
-                .IsRequired();          //trường này ko được rỗng
-                e.Property(e => e.NgayNhap);
-
-                e.Property(e => e.GhiChu)
-                 .HasMaxLength(500).HasColumnType("nvarchar");
-                e.Property(e => e.TongGiaNhap);          
-                e.Property(e => e.NgayTao);
-                e.Property(e => e.NgayCapNhat);
-            });
-            modelBuilder.Entity<PhieuXuat>(e => {
-                e.ToTable("PhieuXuat");//đặt tên bảng
-                e.HasKey(e => e.IdPhieuXuat);//cài khóa chính
-
-                e.Property(e => e.IdPhieuXuat)
-                .IsRequired();          //trường này ko được rỗng
-
-                e.Property(e => e.NgayXuat);
-
-                e.Property(e => e.GhiChu)
-                 .HasMaxLength(500).HasColumnType("nvarchar");          
-                e.Property(e => e.NgayTao);
-                e.Property(e => e.NgayCapNhat);
- 
-            });
-            modelBuilder.Entity<PhieuNhapSanPham>(e => {
-                e.ToTable("PhieuNhapSanPham");//đặt tên bảng
-                e.HasKey(e => e.IdPhieuNhapSanPham);//cài khóa chính
-
-                e.Property(e => e.IdPhieuNhapSanPham)
-                .IsRequired();          //trường này ko được rỗng
-
-                e.Property(e => e.GiaNhap);
-                e.Property(e => e.SoLuong);
-                e.Property(e => e.TongTien);
-
-                e.Property(e => e.SoLuongTruoc);
-
-                e.Property(e => e.SoLuongSau);
-
-
-
-
-
-
-
-               
-                e.Property(e => e.NgayTao);
-                e.Property(e => e.NgayCapNhat);
-             
-
-
-            });
-            modelBuilder.Entity<PhieuXuatSanPham>(e => {
-                e.ToTable("PhieuXuatSanPham");//đặt tên bảng
-                e.HasKey(e => e.IdPhieuXuatSanPham);//cài khóa chính
-
-                e.Property(e => e.IdPhieuXuatSanPham)
-                .IsRequired();          //trường này ko được rỗng
-
-
-                e.Property(e => e.SoLuong);
-
-                e.Property(e => e.SoLuongTruoc);
-                e.Property(e => e.SoLuongSau);
-                e.Property(e => e.Gia);
-
-
-                e.Property(e => e.TongTien);
-
-
-
-               
-                e.Property(e => e.NgayTao);
-                e.Property(e => e.NgayCapNhat);
-              
-
-
-            });
-            modelBuilder.Entity<PhieuChuyenKhoSanPham>(e => {
-                e.ToTable("PhieuChuyenKhoSanPham");//đặt tên bảng
-                e.HasKey(e => e.IdPhieuChuyenKhoSanPham);//cài khóa chính
-
-                e.Property(e => e.IdPhieuChuyenKhoSanPham)
-                .IsRequired();          //trường này ko được rỗng
-
-
-                e.Property(e => e.SoLuong);
-
-
-                e.Property(e => e.Gia);
-
-                e.Property(e => e.TongTien);
-                e.Property(e => e.IdTuKho);
-                e.Property(e => e.IdDenKho);
-                e.Property(e => e.IdTuChiNhanh);
-                e.Property(e => e.IdDenChiNhanh);
-                e.Property(e => e.SoLuongTruocTuKho);
-
-                e.Property(e => e.SoLuongSauTuKho);
-
-                e.Property(e => e.SoLuongTruocDenKho);
-                e.Property(e => e.SoLuongSauDenKho);
-
-              
-
-               
-                e.Property(e => e.NgayTao);
-                e.Property(e => e.NgayCapNhat);
-               
-
-            });
-            modelBuilder.Entity<PhieuChuyenKho>(e => {
-                e.ToTable("PhieuChuyenKho");//đặt tên bảng
-                e.HasKey(e => e.IdPhieuChuyenKho);//cài khóa chính
-
-                e.Property(e => e.IdPhieuChuyenKho)
-                .IsRequired();          //trường này ko được rỗng
-
-
-               
-
-                e.Property(e => e.NgayChuyenKho);
-
-                e.Property(e => e.GhiChu)
-                 .HasMaxLength(500).HasColumnType("nvarchar");
-
-                e.Property(e => e.TongGiaTri);
-
-                e.Property(e => e.IdTuKho);
-                e.Property(e => e.IdDenKho);
-                e.Property(e => e.IdTuChiNhanh);
-                e.Property(e => e.IdDenChiNhanh);
-
-
-                e.Property(e => e.NgayTao);
-                e.Property(e => e.NgayCapNhat);
-              
-
-
-            });
+           
         }
         }
     

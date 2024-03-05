@@ -22,6 +22,6 @@ namespace Test.Domain.Entities
         //
         public ICollection<KhoChiTiet> KhoChiTiets { get; set; }
 
-        public ICollection<PhieuNhap> PhieuNhaps { get; set; }
+      
     }
 }

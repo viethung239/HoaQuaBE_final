@@ -37,12 +37,7 @@ namespace Test.Application.Modules
             services.AddScoped<INhaCungCapService, NhaCungCapService>();
             services.AddScoped<IDonHangService, DonHangService>();
             services.AddScoped<IDonHangChiTietService, DonHangChiTietService>();
-            services.AddScoped<IPhieuNhapService, PhieuNhapService>();
-            services.AddScoped<IPhieuXuatService, PhieuXuatService>();
-            services.AddScoped<IPhieuNhapSanPhamService, PhieuNhapSanPhamService>();
-            services.AddScoped<IPhieuXuatSanPhamService, PhieuXuatSanPhamService>();
-            services.AddScoped<IPhieuChuyenKhoService, PhieuChuyenKhoService>();
-            services.AddScoped<IPhieuChuyenKhoSanPhamService, PhieuChuyenKhoSanPhamService>();
+          
             return services;
         }
     }
